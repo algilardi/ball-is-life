@@ -1,0 +1,1 @@
+/* Ball is Life: A Basketball Video Site by Al Gilardi */var express=require("express"),router=express.Router();router.get("/",function(a,b,c){b.send("respond with a resource")}),module.exports=router;

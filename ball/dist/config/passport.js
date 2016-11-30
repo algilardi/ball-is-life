@@ -1,0 +1,1 @@
+/* Ball is Life: A Basketball Video Site by Al Gilardi */var passport=require("passport"),LocalStrat=require("passport-local").Strategy,User=require("../models/user");passport.use(new LocalStrat(User.authenticate())),passport.serializeUser(User.serializeUser()),passport.deserializeUser(User.deserializeUser());

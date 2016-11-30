@@ -1,0 +1,19 @@
+<div class="topbar">
+    <a href="/" class="homelink">← Home</a>
+    <h1>{{user.username}}</h1> Favorite Team: {{user.team}}
+</div>
+
+<div class="top-main">
+    {{#unless clips}}
+    <h2>This user hasn't posted any clips yet!</h2>
+    <img src="/images/docface.gif" width="650px"></img>
+    {{/unless}}
+    <div class="clips" id="clip-div">
+        {{#each clips}}
+        <a href="/clip/{{this.videoID}}" class='clip-title'>{{this.title}}</a><br>
+        <iframe width="640" height="480" src='{{this.url}}' frameBorder="0">
+        </iframe><br>
+        {{this.comments.length}} <a href="/clip/{{this.videoID}}">Comments</a><br><br>
+        {{/each}}
+    </div>
+</div>

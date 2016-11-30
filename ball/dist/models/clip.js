@@ -1,0 +1,1 @@
+/* Ball is Life: A Basketball Video Site by Al Gilardi */var mongoose=require("mongoose"),Schema=mongoose.Schema,CommentSchema=require("../models/comment").schema,Clip=new Schema({title:String,url:String,team:String,user:String,videoID:String,comments:[CommentSchema],editable:Boolean});module.exports=mongoose.model("Clip",Clip);

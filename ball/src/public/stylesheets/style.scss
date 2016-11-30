@@ -1,0 +1,132 @@
+$font-stack: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+$background-dark: #FFA912;
+$background-light: #E9EAED;
+$shadow-color: #CF8400;
+$link-color: #AA4500;
+
+@mixin bar($top, $right, $bot, $left, $width, $height) {
+    background-color: $background-dark;
+    margin: 0 0 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 1px 1px 5px $shadow-color;
+    padding: $top $right $bot $left;
+    width: $width;
+    height: $height;
+}
+
+@mixin topmain($padding) {
+    text-align: center;
+    float: left;
+    padding-top: $padding;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+  padding: 50px;
+  font-family: $font-stack;
+  background-color: $background-light;
+}
+
+a {
+  color: black;
+}
+
+a:hover{
+    color: $link-color;
+}
+
+iframe {
+    padding-top: 5px;
+}
+
+.sidebar {
+    @include bar(0, 50px, 50px, 50px, 300px, 100%);
+    float:left;
+}
+
+#title {
+    font-size: 3em;
+}
+
+.main {
+    position: static;
+    margin-left: 400px;
+    text-align: center;
+    position: relative;
+    bottom: 50px;
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    p {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+}
+
+.clip-title{
+    font-size: 1.3em;
+}
+
+.topbar {
+    @include bar(15px, 10px, 20px, 10px, 100%, 105px);
+    text-align: center;
+    z-index: 10;
+}
+
+.top-main {
+    @include topmain(100px);
+    float: left;
+}
+
+.gif {
+    @include topmain(200px);
+}
+
+.stats-button {
+    position: absolute;
+    bottom: 150px;
+}
+
+.bottom-button {
+    position: absolute;
+    bottom: 100px;
+}
+
+.homelink {
+    text-align: left;
+    float: left;
+}
+
+.comments {
+    text-align: left;
+    position: absolute;
+    left: 300px;
+    width: 800px;
+}
+
+#comment-user {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#commentbox {
+  width: 500px;
+  padding-bottom: 5px;
+}
+
+.deletecomment {
+  color: grey;
+  font-size: .8em;
+  margin-left: 25px;
+}
+
+.deleteclip {
+  padding-top: 10px;
+  text-align: center;
+  padding-bottom: 50px;
+}
