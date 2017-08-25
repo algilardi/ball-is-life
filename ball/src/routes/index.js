@@ -85,7 +85,7 @@ router.get('/user/:userName', function(req, res) {
         }
         else {
             Clip.find({user:user.username}, function(err, clips, count) {
-                console.log(clips);
+                //console.log(clips);
                 res.render('userpage', {user:user, clips:clips});
             });
         }
@@ -120,7 +120,7 @@ router.get('/clip/:videoID', function(req, res) {
             }
           });
           clip.save(function(){
-            console.log(clip.editable);
+            //console.log(clip.editable);
             res.render('clippage', {user:req.user, clip:clip, comments:clip.comments});
           });
         }
@@ -145,7 +145,7 @@ router.post('/clip/:videoID', function(req, res) {
       comment.commentID = req.params.videoID + clip.comments.length;
         clip.comments.push(comment);
         clip.save(function(err, clip, count) {
-            console.log(err, clip, count);
+            //console.log(err, clip, count);
             res.redirect('/clip/' + req.params.videoID);
         });
     });
@@ -175,9 +175,9 @@ router.get('/api/deletecomment/:commentID', function(req, res) {
   Clip.findOne({videoID:videoID}, function(err, clip, count) {
     for (var i = 0; i < clip.comments.length; i++) {
       if (clip.comments[i].commentID === req.params.commentID) {
-        console.log("BEFORE", clip.comments);
+        //console.log("BEFORE", clip.comments);
         clip.comments.splice(i, 1);
-        console.log("AFTER",clip.comments);
+        //console.log("AFTER",clip.comments);
       }
     }
     clip.save(function(err, clip, count) {
@@ -202,7 +202,7 @@ router.get('/api/sort', function(req, res) {
         teamFilter.team = req.query.team;
     }
     Clip.find(teamFilter, function(err, clips, count) {
-        console.log(clips);
+        //console.log(clips);
         res.send(clips);
     })
 })
